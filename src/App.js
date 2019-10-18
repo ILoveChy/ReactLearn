@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 // import Modal from './components/common/Modal/index'
 // import ThreeLayout from './components/common/ThreeLayout/index'
-
+import Test from './components/common/CheckBoxGroup/Test'
 export default class App extends Component {
-    state = {
-        showModal: false
-    }
-    showModal = () => {
-        this.setState({
-            showModal: true
-        })
-    }
-    hideModal = () => {
-        this.setState({
-            showModal: false
-        })
-    }
-    render() {
-        return (
-            <>
-                {/* <img src="https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=3483030207,3924941481&fm=202&mola=new&crop=v1" alt="" />
+  state = {
+    showModal: false
+  }
+  showModal = () => {
+    this.setState({
+      showModal: true
+    })
+  }
+  hideModal = () => {
+    this.setState({
+      showModal: false
+    })
+  }
+  render() {
+    return (
+      <>
+        {/* <img src="https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=3483030207,3924941481&fm=202&mola=new&crop=v1" alt="" />
                 {
                     this.state.showModal ?
                         (
@@ -37,7 +37,7 @@ export default class App extends Component {
 
 
                 <button onClick={this.showModal} >显示蒙层</button> */}
-                {/* <ThreeLayout
+        {/* <ThreeLayout
                     left={
                         <div style={{
                             border: "2px solid #f60"
@@ -56,7 +56,8 @@ export default class App extends Component {
                         <p>sadasdasduih uah uhaiuhd uha iuhiu hwiquh hiquh i</p>
                     </div>
                 </ThreeLayout> */}
-            </>
-        )
-    }
+        <Test />
+      </>
+    )
+  }
 }
