@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Modal from './components/common/Modal/index'
-import './App.css'
+// import Modal from './components/common/Modal/index'
+// import ThreeLayout from './components/common/ThreeLayout/index'
 
 export default class App extends Component {
     state = {
@@ -19,10 +19,11 @@ export default class App extends Component {
     render() {
         return (
             <>
-                <img src="https://sta-op.douyucdn.cn/butterfly-java/2019/09/29/eaf922cf0497f5a79d2cb449426e1436.jpg" alt="" />
+                {/* <img src="https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=3483030207,3924941481&fm=202&mola=new&crop=v1" alt="" />
                 {
                     this.state.showModal ?
                         (
+
                             <Modal onClose={this.hideModal}>
                                 <div style={{
                                     background: "#fff"
@@ -35,7 +36,26 @@ export default class App extends Component {
                 }
 
 
-                <button onClick={this.showModal} >显示蒙层</button>
+                <button onClick={this.showModal} >显示蒙层</button> */}
+                {/* <ThreeLayout
+                    left={
+                        <div style={{
+                            border: "2px solid #f60"
+                        }}>左边栏</div>
+                    }
+                    right={
+                        <div style={{
+                            border: "2px solid #f10"
+                        }}>右边栏</div>
+                    }
+                >
+                    <div style={{
+                        border: "2px solid #f40"
+                    }}>
+                        <h1>主区域</h1>
+                        <p>sadasdasduih uah uhaiuhd uha iuhiu hwiquh hiquh i</p>
+                    </div>
+                </ThreeLayout> */}
             </>
         )
     }
