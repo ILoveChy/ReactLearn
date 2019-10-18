@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import CheckBoxGroup from './index'
+import RadioBoxGroup from './index'
 import { getAllStudents } from '../../../services/student'
+
 export default class Test extends Component {
     state = {
         datas: [],
-        chooseDatas: []
+        value: ""
     }
 
     async componentDidMount() {
@@ -21,11 +22,11 @@ export default class Test extends Component {
     render() {
         return (
             <div>
-                <CheckBoxGroup name="loves"
+                <RadioBoxGroup name="loves"
                     {...this.state}
-                    onChange={newArr => {
+                    onChange={value => {
                         this.setState({
-                            chooseDatas: newArr
+                            value
                         })
                     }}
                 />
