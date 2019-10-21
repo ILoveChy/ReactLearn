@@ -1,27 +1,40 @@
 import React from 'react'
 import './index.css'
+import types from '../../../utils/commonTypes'
+import PropTypes from 'prop-types'
+
+
+ThreeLatout.defaultProps = {
+    leftWidth: 200,
+    rightWidth: 200,
+    minWidth: 800
+}
+ThreeLatout.propTypes = {
+    leftWidth: PropTypes.number,
+    rightWidth: PropTypes.number,
+    rightWidth: PropTypes.number,
+    children: types.children,
+    left: types.children,
+    right: types.children,
+}
+
+
 
 export default function ThreeLatout(props) {
-    const defaultProps = {
-        leftWidth: 200,
-        rightWidth: 200,
-        minWidth: 800
-    }
-    const datas = Object.assign({}, defaultProps, props);
     return (
         <div className="three-layout" style={{
-            minWidth: datas.minWidth
+            minWidth: props.minWidth
         }}>
             <div className="main">
                 {props.children}
             </div>
             <div className="aside-left" style={{
-                width: datas.leftWidth
+                width: props.leftWidth
             }}>
                 {props.left}
             </div>
             <div className="aside-right" style={{
-                width: datas.rightWidth
+                width: props.rightWidth
             }}>
                 {props.right}
             </div>

@@ -1,5 +1,21 @@
 import React from 'react'
 import './Pager.css'
+import PropTypes from 'prop-types'
+
+
+Pager.defaultProps = {
+    current: 1,
+    limit: 10,
+    panelNUmber: 5
+}
+Pager.propTypes = {
+    current: PropTypes.number,
+    total: PropTypes.number.isRequired,
+    limit: PropTypes.number,
+    panelNUmber: PropTypes.number
+}
+
+
 /**
  * 分页组件
  * 属性:
