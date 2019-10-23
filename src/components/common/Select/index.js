@@ -1,52 +1,44 @@
 import React, { Component } from 'react'
 import types from '../../../utils/commonTypes'
+import withDataGroup from '../hoc/withDataGroup'
 import PropTypes from 'prop-types'
-/**
- * 一组单选框
- */
-export default class Select extends Component {
 
-    /** 
-     * 默认属性值
-     */
-    static defaulProps = {
-        datas: [],
-        value: "",
-    }
-    /** 
-     * 属性验证
-     */
+
+class Option extends Component {
     static propTypes = {
-        datas: types.groupDatas.isRequired,
+        info: types.singleData
+    }
+    render() {
+        return (
+            <option value={this.props.info.value}>
+                {this.props.info.text}
+            </option>
+        )
+    }
+}
+const OptGroup = withDataGroup(Option);
+
+export default class Select extends Component {
+    static propTypes = {
         name: PropTypes.string.isRequired,
-        value: types.string.isRequired,
+        value: PropTypes.string.isRequired,
         onChange: PropTypes.func
     }
-
     handleChange = e => {
-        this.props.onChange && this.props.onChange(e.target.value, this.props.name, e);
-    }
-
-    /**
-     * 得到一组option
-     */
-    getOptions() {
-        return this.props.datas.map(item => (
-            <option key={item.value} value={item.value}>
-                {item.text}
-            </option>
-        ))
+        this.props.onChange && this.props.onChange(e.target.value);
     }
 
     render() {
-        const options = this.getOptions();
+
         return (
-            <select name={this.props.name}
+            <select
+                name={this.props.name}
                 value={this.props.value}
                 onChange={this.handleChange}
             >
-                {options}
+                <OptGroup {...this.props} />
             </select>
+
         )
     }
 }

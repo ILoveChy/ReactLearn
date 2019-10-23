@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RadioBoxGroup from './index'
+import RadioGroup from './index'
 import { getAllStudents } from '../../../services/student'
 
 export default class Test extends Component {
@@ -10,8 +10,6 @@ export default class Test extends Component {
 
     async componentDidMount() {
         const stus = await getAllStudents()
-        console.log(stus);
-
         this.setState({
             datas: stus.map(item => ({
                 value: item.id.toString(),
@@ -22,7 +20,7 @@ export default class Test extends Component {
     render() {
         return (
             <div>
-                <RadioBoxGroup name="loves"
+                <RadioGroup name="loves"
                     {...this.state}
                     onChange={value => {
                         this.setState({

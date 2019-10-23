@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 // import Modal from './components/common/Modal/index'
 // import ThreeLayout from './components/common/ThreeLayout/index'
 // import Test from './components/common/CheckBoxGroup/Test'
-// import Test from './components/common/RadioBoxGroup/Test'
-// import Test from './components/common/Select/Test'
+// import Test from './components/common/RadioGroup/Test'
+import Test from './components/common/Select/Test'
 export default class App extends Component {
   state = {
     showModal: false
@@ -58,7 +58,7 @@ export default class App extends Component {
                         <p>sadasdasduih uah uhaiuhd uha iuhiu hwiquh hiquh i</p>
                     </div>
                 </ThreeLayout> */}
-        {/* <Test /> */}
+        <Test />
       </>
     )
   }
