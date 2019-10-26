@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 // import ThreeLayout from './components/common/ThreeLayout/index'
 // import Test from './components/common/CheckBoxGroup/Test'
 // import Test from './components/common/RadioGroup/Test'
-import Test from './components/common/Select/Test'
+// import Test from './components/common/Select/Test'
+import Test from './components/common/Banner/Test'
 export default class App extends Component {
   state = {
     showModal: false
