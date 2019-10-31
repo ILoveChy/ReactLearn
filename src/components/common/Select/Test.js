@@ -10,8 +10,6 @@ export default class Test extends Component {
 
     async componentDidMount() {
         const stus = await getAllStudents()
-        console.log(stus);
-
         this.setState({
             datas: stus.map(item => ({
                 value: item.id.toString(),
