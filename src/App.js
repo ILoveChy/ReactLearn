@@ -4,7 +4,9 @@ import React, { Component } from 'react'
 // import Test from './components/common/CheckBoxGroup/Test'
 // import Test from './components/common/RadioGroup/Test'
 // import Test from './components/common/Select/Test'
-import Test from './components/common/Banner/Test'
+// import Test from './components/common/Banner/Test'
+import Test from './components/common/Form/Test'
+
 export default class App extends Component {
   state = {
     showModal: false
@@ -22,6 +24,7 @@ export default class App extends Component {
   render() {
     return (
       <>
+        <Test />
         {/* <img src="https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=3483030207,3924941481&fm=202&mola=new&crop=v1" alt="" />
                 {
                     this.state.showModal ?
@@ -59,7 +62,7 @@ export default class App extends Component {
                         <p>sadasdasduih uah uhaiuhd uha iuhiu hwiquh hiquh i</p>
                     </div>
                 </ThreeLayout> */}
-        <Test />
+
       </>
     )
   }
