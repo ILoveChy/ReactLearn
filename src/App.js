@@ -1,35 +1,28 @@
-import React, { useReducer } from 'react'
-// import React from 'react'
-// import useReducer from './useReducer'  手写useReducer 
+import React, { useContext } from 'react'
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "increase":
-      return state + 1;
-    case "decrease":
-      if (state === 0) {
-        return 0
-      }
-      return state - 1;
-    default:
-      return state
-  }
+
+const ctx1 = React.createContext();
+// function Test() {
+//   return (
+//     <ctx.Consumer>
+//       {value => <h1>Test,上下文的值:{value}</h1>}
+//     </ctx.Consumer>
+//   )
+// }
+function Test() {
+  const data = useContext(ctx1)
+  return <h1>{data.name}{data.age}</h1>
 }
-
 export default function App() {
-  const [num, dispath] = useReducer(reducer, 10, (args) => {
-    console.log(args);
-    return 100
-  })
+
   return (
     <div>
-      <button onClick={() => {
-        dispath({ type: "decrease" })
-      }}>-</button>
-      <span>{num}</span>
-      <button onClick={() => {
-        dispath({ type: "increase" })
-      }}>+</button>
+      <ctx1.Provider value={{
+        name: "梁帅",
+        age: 27
+      }}>
+        <Test />
+      </ctx1.Provider>
     </div>
   )
 }

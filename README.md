@@ -111,3 +111,7 @@ Flux:Facebook出的一个数据流框架
 5. 如果要触发reducer,不可以直接调用,而是应该调用一个辅助函数dispatch
    1. 该函数仅接收一个参数:action
    2. 该函数会间接调用reducer,以达到改变数据的目的
+
+# Context Hook
+
+用于上下文的数据
