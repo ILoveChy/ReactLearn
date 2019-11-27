@@ -112,6 +112,25 @@ Flux:Facebook出的一个数据流框架
    1. 该函数仅接收一个参数:action
    2. 该函数会间接调用reducer,以达到改变数据的目的
 
+```javascript
+const [state, dispatch] = useReducer(reducer, initialState, init)
+```
+
 # Context Hook
 
 用于上下文的数据
+函数名:useContext
+
+# Callback Hook
+
+函数名: useCallback
+
+用于得到一个固定引用值的函数,通常用它进行性能优化
+
+useCallback:
+
+该函数有两个参数:
+1. 函数,useCallback会固定该函数的引用,只要依赖项没有发生变化,则始终返回之前函数的地址
+2. 数组,记录依赖项
+
+该函数返回:引用相对固定的函数地址
