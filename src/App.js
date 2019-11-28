@@ -1,23 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react'
-export default function App() {
+import React, { useDebugValue, useState, useEffect } from 'react'
 
-  const [num, setNum] = useState(10);
-  const numRef = useRef(num);
+function useTest() {
+  const [students,] = useState([]);
+  useDebugValue("学生集合")
+  return students
+}
+export default function App() {
+  useState(0);
   useEffect(() => {
-    const timer = setInterval(() => {
-      numRef.current--;
-      setNum(numRef.current)
-      if (numRef.current === 0) {
-        clearInterval(timer)
-      }
-    }, 1000);
-    return () => {
-      clearTimeout(timer)
-    }
+    console.log('effect');
   }, [])
+  useTest()
   return (
     <div>
-      <h1>{num}</h1>
+
     </div>
   )
 }

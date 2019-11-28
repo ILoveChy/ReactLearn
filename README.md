@@ -147,3 +147,19 @@ useRef函数:
 一个参数:默认值
 返回一个固定的对象,```{current:值}```
 不仅仅是用于Ref对象
+
+# ImperativeHandle Hook
+函数:useImperativeHandle
+跟Ref转发结合使用forwardRef
+
+# LayoutEffect Hook
+
+useEffect:浏览器渲染完成后用户看到新的渲染结果之后运行
+useLayoutEffect:完成了DOM改动,但还没有呈现给用户(操作真实Dom副作用,用这个)
+
+应该尽量使用useEffect,因为它不会导致渲染阻塞
+
+# DebugValue Hook
+
+useDebugValue:用于将自定义Hook的关联数据显示到调试栏 (在自定义Hook中使用)
+如果创建的自定义Hook通用性比较高,可以选择使用useDebugValue方便调试
