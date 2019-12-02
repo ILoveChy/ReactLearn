@@ -1,0 +1,11 @@
+.header-left {
+    color: #007dea;
+}
+
+.header-right span {
+    margin: 5px;
+}
+
+.header-right button {
+    cursor: pointer;
+}
