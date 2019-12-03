@@ -15,7 +15,8 @@ export default function Admin() {
         >
             <Route path="/" exact component={Welcome} />
             <Route path="/students" exact component={StudentList} />
-            <Route path="/students/add" exact component={StudentAdd} />
+            <Route path="/students/add/:name?/:age(\d+)?/:sex(\d+)?" exact component={StudentAdd} />
+
         </Layout>
     )
 }
