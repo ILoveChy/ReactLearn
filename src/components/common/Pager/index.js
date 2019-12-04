@@ -1,18 +1,18 @@
 import React from 'react'
-import './Pager.css'
+import './index.css'
 import PropTypes from 'prop-types'
 
 
 Pager.defaultProps = {
     current: 1,
     limit: 10,
-    panelNUmber: 5
+    panelNumber: 5
 }
 Pager.propTypes = {
     current: PropTypes.number,
     total: PropTypes.number.isRequired,
     limit: PropTypes.number,
-    panelNUmber: PropTypes.number
+    panelNumber: PropTypes.number
 }
 
 
@@ -22,7 +22,7 @@ Pager.propTypes = {
  * 1. current:初始页码
  * 2. total:总数据量
  * 3. limit:每页显示数据量
- * 4. panelNUmber:数字页码最多显示多少个
+ * 4. panelNumber:数字页码最多显示多少个
  */
 export default function Pager(props) {
     const pageNumber = getPageNumber(props);//总页数
