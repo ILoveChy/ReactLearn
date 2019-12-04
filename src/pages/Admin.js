@@ -23,6 +23,7 @@ export default function Admin() {
                 <Route path="/students/:sNo" exact component={StudentDetail} />
                 <Route path="/course" exact component={CourseList} />
                 <Route path="/course/add" exact component={CourseAdd} />
+                {/* <Redirect to="/students" /> */}
             </Switch>
 
 
