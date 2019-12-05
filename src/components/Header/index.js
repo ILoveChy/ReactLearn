@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-export default function Header() {
+export default function Header(props) {
     return (
         <>
             <div className="header-left">
@@ -8,7 +8,7 @@ export default function Header() {
             </div>
             <div className="header-right">
                 <span>用户名:{'sss'}</span>
-                <button>退出</button>
+                <button onClick={props.onLoginOut ? props.onLoginOut : null}>退出</button>
             </div>
         </>
 
