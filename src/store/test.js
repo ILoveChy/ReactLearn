@@ -1,5 +1,11 @@
 import store from './index'
-import { fetchUsers } from './action/userAction'
+// import { change } from './action/student/searchCondition'
+import { fetchStudents } from './action/student/searchResult'
 
 
-store.dispatch(fetchUsers());//正在加载
+// store.dispatch(change({
+//     key: "acb",
+//     page: 2
+// }))
+
+store.dispatch(fetchStudents())
