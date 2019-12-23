@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import loginInfo from '../loginInfo'
+import loginInfo from '../loginInfo/index'
 export default class Login extends Component {
 
     render() {
