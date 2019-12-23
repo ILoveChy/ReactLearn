@@ -1,8 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import { asyncDecrease, asyncIncrease, increase, decrease } from '../store/action/counter'
+import store from '../store'
 //展示组件
-function Counter(props) {
+export function Counter(props) {
     return (
         <div>
             <h1>{props.number}</h1>
@@ -24,10 +25,6 @@ function mapStateToProps(state) {
         number: state.counter
     }
 }
-/**
- * 映射出事件处理函数
- * @param {*} dispatch 
- */
 function mapDispatchProps(dispatch) {
     return {
         onAsyncDecrease: () => {
@@ -44,7 +41,22 @@ function mapDispatchProps(dispatch) {
         }
     }
 }
-//connect返回一个高阶组件
+
 // Counter组件的数据来自于仓库
-//传入展示组件返回容器组件
-export default connect(mapStateToProps, mapDispatchProps)(Counter)
+// connect()
+
+//容器组件
+
+export default class CounterContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = mapStateToProps(store.getState());
+        store.subscribe(() => {
+            this.setState(mapStateToProps(store.getState()))
+        })
+    }
+    render() {
+        const eventHandlers = mapDispatchProps(store.dispatch)
+        return <Counter {...this.state}  {...eventHandlers} />
+    }
+}

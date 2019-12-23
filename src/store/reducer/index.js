@@ -6,6 +6,6 @@ import { combineReducers } from 'redux'
 //合并学生reducer
 
 export default combineReducers({
-    students,
-    counter
+    counter,
+    students
 })

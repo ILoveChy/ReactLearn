@@ -1,5 +1,5 @@
+import { actionTypes } from '../../action/counter'
 
-import { actionTypes } from "../../action/counter"
 export default function (state = 10, { type }) {
     switch (type) {
         case actionTypes.increase:
