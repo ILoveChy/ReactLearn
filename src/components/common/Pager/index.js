@@ -23,6 +23,7 @@ Pager.propTypes = {
  * 2. total:总数据量
  * 3. limit:每页显示数据量
  * 4. panelNumber:数字页码最多显示多少个
+ * 5. onPageChange:页码改变时的事件
  */
 export default function Pager(props) {
     const pageNumber = getPageNumber(props);//总页数
@@ -30,7 +31,7 @@ export default function Pager(props) {
         return null;
     }
     const min = getMinNumber(props);//最小数字
-    const max = getMaxNumber(pageNumber, props);//最大数字
+    const max = getMaxNumber(min, pageNumber, props);//最大数字
     const numbers = [];
     // if (max - min + 1 < props.panelNumber) {//怎么让页码始终保持5页且保持页码正常?
     //     min = max - props.panelNumber + 1
@@ -70,14 +71,13 @@ function getMinNumber(props) {
  * @param {*} pageNumber 总页数
  * @param {*} props 
  */
-function getMaxNumber(pageNumber, props) {
-    let max = props.current + Math.floor(props.panelNumber / 2)
+function getMaxNumber(min, pageNumber, props) {
+    var max = min + props.panelNumber - 1;
     if (max > pageNumber) {
-        max = pageNumber
+        max = pageNumber;
     }
-    return max
+    return max;
 }
-
 
 /**
  * 跳转到指定页码

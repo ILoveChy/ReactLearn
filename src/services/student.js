@@ -27,6 +27,7 @@ export async function searchStudents({ page = 1, limit = 10, key = "", sex = -1 
         delete res.searchList;
         return res
     }
+
     else {
         //忽略性别,查询全部
         const res = await getStudents(page, limit)

@@ -11,6 +11,8 @@ const initialState = {
  * @param {*} action 
  */
 export default function (state = initialState, { type, payload }) {
+    console.log(type, payload, state);
+
     switch (type) {
         case actionTypes.setIsLoading:
             return {

@@ -1,8 +1,8 @@
 export const actionTypes = {
-    increase: Symbol("increase"),
-    decrease: Symbol("decrease"),
-    asyncIncrease: Symbol("async-increase"),
-    asyncDecrease: Symbol("async-decrease"),
+    increase: "INCREASE",
+    decrease: "DECREASE",
+    asyncIncrease: "ASYNC_INCREASE",
+    asyncDecrease: "ASYNC_DECREASE"
 }
 
 export function increase() {

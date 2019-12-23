@@ -1,25 +1,25 @@
-import { takeEvery, put, call, select } from "redux-saga/effects";
-// import {apply } from "redux-saga/effects";
-import { actionTypes, setIsLoading, setStudentAndTotal } from "../action/student/searchResult";
-import { searchStudents } from "../../services/student";
-
-
-
+import { actionTypes, setIsLoading, setStudentAndTotal } from "../action/student/searchResult"
+import { takeEvery, put, call, select } from "redux-saga/effects"
+import { searchStudents } from "../../services/student"
+// import store from '../../store'
 function* fetchStudents() {
     //设置为正在加载中
     yield put(setIsLoading(true))
-    //当saga发现得到的结果是一个Promise对象,他会自动等待Promise完成
-    //完成后会把完成的经过作为值传递到下一次next
-    //如果Promise对象被拒绝,saga会使用generator.throw抛出一个错误
-    const state = yield select(state => state.students.searchCondition);
-    console.log(state);
+    const condition = yield select(state => state.students.searchCondition);
+    //使用call指令，按照当前仓库中的条件
+    try {
+        const res = yield call(searchStudents, condition)
 
-    //使用call指令,按照当前仓库中的条件查询
-    const res = yield call(searchStudents);
-    // const res = yield apply(null,searchStudents);
-    yield put(setStudentAndTotal(res.datas, res.cont))
-    yield put(setIsLoading(false))
+        yield put(setStudentAndTotal(res.datas, res.cont))
+    }
+    catch (err) {
+        console.log(err.message);
+    }
+    finally {
+        yield put(setIsLoading(false));
+    }
 }
+
 export default function* () {
     yield takeEvery(actionTypes.fetchStudents, fetchStudents);
 }

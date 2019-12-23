@@ -1,9 +1,20 @@
 export const actionTypes = {
     //设置学生查询结果数组和总数
-    setStudentAndTotal: Symbol("setStudentAndTotal"),
-    setIsLoading: Symbol("setIsLoading"),
-    fetchStudents: Symbol("fetchStudents")
+    setStudentAndTotal: "SET_STUDENT_AND_TOTAL",
+    setIsLoading: "SET_ISLOADING",
+    fetchStudents: "FETCH_STUDENTS"
 }
+
+/**
+ * 根据当前仓库中的查询条件,查询学生
+ */
+export function fetchStudents() {
+    return {
+        type: actionTypes.fetchStudents,
+    }
+}
+
+
 /**
  * 得到一个设置学生数组和总数的action
  * @param {Array} arr 学生数组
@@ -30,11 +41,3 @@ export function setIsLoading(isLoading) {
     }
 }
 
-/**
- * 根据当前仓库中的查询条件,查询学生
- */
-export function fetchStudents() {
-    return {
-        type: actionTypes.fetchStudents,
-    }
-}
